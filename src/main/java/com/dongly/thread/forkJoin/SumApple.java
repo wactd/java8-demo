@@ -88,16 +88,11 @@ public class SumApple {
                 }
                 return appleList;
             } else {
-                // System.out.println("----------------------");
                 Integer middle = (start + end) / 2;
-                // System.out.println("start: " + start);
-                // System.out.println("middle: " + middle);
-                // System.out.println("end: " + end);
                 ForkJoinSumApple left = new ForkJoinSumApple(apples, start, middle, predicate);
                 left.fork();
                 ForkJoinSumApple right = new ForkJoinSumApple(apples, middle, end, predicate);
                 right.fork();
-
                 List<Apple> join = left.join();
                 join.addAll(right.join());
                 return join;

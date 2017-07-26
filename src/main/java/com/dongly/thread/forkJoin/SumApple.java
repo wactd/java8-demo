@@ -56,7 +56,7 @@ public class SumApple {
         System.out.println(arrayList.size()); // 200 0000 1100 0000 700 0000 900 0000  1800 0000
 
         Instant endTime = Instant.now();
-        System.out.println(Duration.between(startTime, endTime).getNano() + "--"); // 20000000
+        System.out.println(Duration.between(startTime, endTime).getNano() + "- -"); // 20000000
     }
 
     static class ForkJoinSumApple extends RecursiveTask<List<Apple>> {
